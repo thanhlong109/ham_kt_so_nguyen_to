@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <p>
+        <label>Number need check</label>
+        <input type="number" placeholder="Enter a number"
+                onchange="isPrime(this.value)";
+                oninput = "isPrime(this.value)";>
+    </p>
+    <p>Is Prime:<span id="output"> </p>
+    <script>
+        function isPrime(number){
+            if(number<=1){
+                check = false;
+            }if(number==2||number==3){
+                check = true;
+            }else{
+                for(let i=2;i<number;i++){
+                    if(number%i==0){
+                        check = false;
+                        break;
+                    }else{
+                        check = true;
+                        break;
+                    }
+                }
+            }
+            document.getElementById("output").innerHTML = check;
+        }
+    </script>
+</body>
+</html>
